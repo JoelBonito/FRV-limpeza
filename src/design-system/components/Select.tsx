@@ -121,7 +121,7 @@ export function Select({
     return (
         <div className={cn('w-full', className)} ref={containerRef}>
             {label && (
-                <label className="block text-xs font-bold text-slate-600 mb-1.5 uppercase tracking-wide">
+                <label className="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1.5 uppercase tracking-wide">
                     {label}
                 </label>
             )}
@@ -147,7 +147,7 @@ export function Select({
                 >
                     <span className={cn(
                         'truncate',
-                        selectedOption ? 'text-slate-800' : 'text-slate-400'
+                        selectedOption ? 'text-slate-800 dark:text-slate-100' : 'text-slate-400'
                     )}>
                         {selectedOption?.label || placeholder}
                     </span>
@@ -192,8 +192,9 @@ export function Select({
                                                 onMouseEnter={() => setHighlightedIndex(globalIndex)}
                                                 className={cn(
                                                     'flex items-center justify-between gap-2 px-3 py-2 cursor-pointer transition-colors',
-                                                    highlightedIndex === globalIndex && 'bg-slate-50',
-                                                    option.value === value && 'bg-[var(--primary)]/10 text-[var(--primary)]',
+                                                    'text-slate-700 dark:text-slate-200',
+                                                    highlightedIndex === globalIndex && 'bg-slate-50 dark:bg-slate-800',
+                                                    option.value === value && 'bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)]',
                                                     option.disabled && 'opacity-40 cursor-not-allowed'
                                                 )}
                                             >
@@ -216,8 +217,9 @@ export function Select({
                                     onMouseEnter={() => setHighlightedIndex(index)}
                                     className={cn(
                                         'flex items-center justify-between gap-2 px-3 py-2 cursor-pointer transition-colors',
-                                        highlightedIndex === index && 'bg-slate-50',
-                                        option.value === value && 'bg-[var(--primary)]/10 text-[var(--primary)]',
+                                        'text-slate-700 dark:text-slate-200',
+                                        highlightedIndex === index && 'bg-slate-50 dark:bg-slate-800',
+                                        option.value === value && 'bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)]',
                                         option.disabled && 'opacity-40 cursor-not-allowed'
                                     )}
                                 >

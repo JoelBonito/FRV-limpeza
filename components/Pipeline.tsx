@@ -153,7 +153,7 @@ const Pipeline: React.FC = () => {
       <div className="lg:hidden space-y-4">
         {filteredDeals.length > 0 ? (
           filteredDeals.map((deal) => (
-            <Card key={deal.id} className="relative overflow-hidden bg-[var(--surface)] border-[var(--border)]">
+            <Card key={deal.id} className="relative bg-[var(--surface)] border-[var(--border)]">
               <div className="flex justify-between items-start mb-3">
                 <StatusBadge status={deal.status} compact />
                 <span className="text-xs font-mono text-[var(--text-secondary)]">#{deal.id}</span>

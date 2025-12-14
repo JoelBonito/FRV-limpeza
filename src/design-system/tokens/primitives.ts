@@ -39,9 +39,10 @@ export const primitives = {
     // Border Radius
     borderRadius: {
         sm: '4px',
-        md: '8px',
-        lg: '12px',
-        xl: '16px',
+        md: '6px',
+        lg: '8px',
+        xl: '12px',
+        '2xl': '16px',
         full: '9999px'
     },
 

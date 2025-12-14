@@ -113,3 +113,70 @@ Full Dark Mode Audit & Tables Refactor
 - `components/Reports.tsx`
 
 **Resultado:** ✅ Sucesso - App 100% Dark Mode Ready.
+
+## Sessão 7: 16:42 - 16:52 (~10min) ✅
+Refinamento Visual: Badges e Dropdown (Dark/Light Mode)
+
+**Bases Consultadas:**
+[Design System: Badge, Select]
+
+**Ações:**
+- Ajuste de contraste background Badges (Enviado/Pendente) em Light Mode. ("Enviado" -> Blue-100, "Pendente" -> Amber-100 sólidos).
+- Correção de legibilidade texto Dropdown (Select) em Dark Mode/Light Mode. (Text colors, hover states).
+- Fix de erro de sintaxe introduzido durante o refatoramento do Select.
+
+**Arquivos modificados:**
+- `src/design-system/components/Badge.tsx`
+- `src/design-system/components/Select.tsx`
+
+**Resultado:** ✅ Sucesso
+
+## Sessão 8: 16:47 - 16:55 (~8min) ⚠️
+Fix Modal Overflow no Desktop (Primeira Tentativa)
+
+**Bases Consultadas:**
+[Design System: Modal]
+
+**Ações:**
+- Diagnóstico de Modal "cortado" em telas pequenas/conteúdo longo.
+- Adicionado `max-h-[90vh]` e `overflow-y-auto` no componente `Modal`.
+- Cabeçalho mantido fixo, apenas conteúdo rola.
+
+**Arquivos modificados:**
+- `src/design-system/components/Modal.tsx`
+
+**Resultado:** ⚠️ Parcial - Solução não funcionou completamente, refeita na Sessão 10.
+
+## Sessão 9: 16:49 - 16:57 (~8min) ✅
+Fix Dropdown Cutoff em Mobile Cards
+
+**Bases Consultadas:**
+[Design System: Card]
+
+**Ações:**
+- Identificado `overflow-hidden` no componente Card dentro do `Pipeline.tsx` (view mobile).
+- Removido `overflow-hidden` para permitir que o Dropdown (absolute position) flutue para fora do card sem ser cortado (z-index natural).
+
+**Arquivos modificados:**
+- `components/Pipeline.tsx`
+
+**Resultado:** ✅ Sucesso
+
+## Sessão 10: 16:50 - 16:58 (~8min) ✅
+Refatoração Completa do Modal (Centralizado com Scroll)
+
+**Bases Consultadas:**
+[Design System: Modal]
+[UI Pattern: Headless UI Modal]
+
+**Ações:**
+- Substituída estratégia de posicionamento absoluto (`top-1/2 -translate-y-1/2`) por container flexbox.
+- Criado container externo com `overflow-y-auto` que permite scroll da página quando modal é maior que viewport.
+- Modal agora usa `min-h-full items-center justify-center` para centralização verdadeira.
+- Adicionado `onClick stopPropagation` para prevenir fechamento ao clicar no modal.
+- Removidas restrições de altura máxima que causavam cortes.
+
+**Arquivos modificados:**
+- `src/design-system/components/Modal.tsx`
+
+**Resultado:** ✅ Sucesso - Modal agora centraliza perfeitamente e permite scroll quando necessário.
