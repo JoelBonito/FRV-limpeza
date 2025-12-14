@@ -104,8 +104,8 @@ const Pipeline: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
         <div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">Orçamentos</h1>
-          <p className="text-[var(--text-secondary)] font-medium mt-1">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight">Orçamentos</h1>
+          <p className="text-text-secondary font-medium mt-1">
             {isAdmin ? 'Visão Geral (Todos os vendedores)' : 'Gerencie seus orçamentos'}
           </p>
         </div>
@@ -119,7 +119,7 @@ const Pipeline: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <Card padding="sm" className="flex flex-col xl:flex-row gap-4 justify-between items-center bg-[var(--surface-elevated)] border-[var(--border)]">
+      <Card padding="sm" className="flex flex-col xl:flex-row gap-4 justify-between items-center bg-surface-elevated border-border">
         <div className="flex gap-1 overflow-x-auto p-1 w-full sm:w-auto scrollbar-hide">
           <Button
             variant={filterStatus === 'ALL' ? 'secondary' : 'ghost'}
@@ -153,23 +153,23 @@ const Pipeline: React.FC = () => {
       <div className="lg:hidden space-y-4">
         {filteredDeals.length > 0 ? (
           filteredDeals.map((deal) => (
-            <Card key={deal.id} className="relative bg-[var(--surface)] border-[var(--border)]">
+            <Card key={deal.id} className="relative bg-surface border-border">
               <div className="flex justify-between items-start mb-3">
                 <StatusBadge status={deal.status} compact />
-                <span className="text-xs font-mono text-[var(--text-secondary)]">#{deal.id}</span>
+                <span className="text-xs font-mono text-text-secondary">#{deal.id}</span>
               </div>
 
               <div className="mb-4">
-                <h3 className="text-lg font-bold text-[var(--text-primary)] leading-tight mb-1">{deal.clientName}</h3>
-                <div className="text-2xl font-extrabold text-[var(--text-primary)] tracking-tight">
+                <h3 className="text-lg font-bold text-text-primary leading-tight mb-1">{deal.clientName}</h3>
+                <div className="text-2xl font-extrabold text-text-primary tracking-tight">
                   R$ {deal.value.toLocaleString('pt-BR')}
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-xs mb-4">
                 {isAdmin && (
-                  <div className="col-span-2 flex items-center gap-1.5 text-[var(--text-secondary)] bg-[var(--surface-elevated)] p-2 rounded-lg">
-                    <UserIcon className="w-3.5 h-3.5 text-cyan-600" />
+                  <div className="col-span-2 flex items-center gap-1.5 text-text-secondary bg-surface-elevated p-2 rounded-lg">
+                    <UserIcon className="w-3.5 h-3.5 text-info" />
                     <span className="font-bold">{getUserName(deal.userId)}</span>
                   </div>
                 )}
@@ -192,7 +192,7 @@ const Pipeline: React.FC = () => {
             </Card>
           ))
         ) : (
-          <Card className="text-center py-10 text-[var(--text-secondary)] font-medium bg-[var(--surface-elevated)] border-[var(--border)]">
+          <Card className="text-center py-10 text-text-secondary font-medium bg-surface-elevated border-border">
             Nenhum orçamento encontrado.
           </Card>
         )}
@@ -200,37 +200,37 @@ const Pipeline: React.FC = () => {
 
       {/* DESKTOP VIEW: TABLE */}
       <div className="hidden lg:block">
-        <Card padding="none" className="overflow-hidden bg-[var(--surface-elevated)] border-[var(--border)]">
+        <Card padding="none" className="overflow-hidden bg-surface-elevated border-border">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[var(--surface)] border-b border-[var(--border)]">
-                  <th className="px-6 py-4 text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">Cliente</th>
-                  <th className="px-6 py-4 text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">Valor (R$)</th>
-                  {isAdmin && <th className="px-6 py-4 text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">Vendedor</th>}
-                  <th className="px-6 py-4 text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">Status</th>
-                  <th className="px-6 py-4 text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">Resgatado?</th>
-                  <th className="px-6 py-4 text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider text-right">Ações</th>
+                <tr className="bg-surface border-b border-border">
+                  <th className="px-6 py-4 text-xs font-bold text-text-secondary uppercase tracking-wider">Cliente</th>
+                  <th className="px-6 py-4 text-xs font-bold text-text-secondary uppercase tracking-wider">Valor (R$)</th>
+                  {isAdmin && <th className="px-6 py-4 text-xs font-bold text-text-secondary uppercase tracking-wider">Vendedor</th>}
+                  <th className="px-6 py-4 text-xs font-bold text-text-secondary uppercase tracking-wider">Status</th>
+                  <th className="px-6 py-4 text-xs font-bold text-text-secondary uppercase tracking-wider">Resgatado?</th>
+                  <th className="px-6 py-4 text-xs font-bold text-text-secondary uppercase tracking-wider text-right">Ações</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[var(--border)]">
+              <tbody className="divide-y divide-border">
                 {filteredDeals.length > 0 ? (
                   filteredDeals.map((deal) => (
-                    <tr key={deal.id} className="hover:bg-[var(--surface)] transition-colors group">
+                    <tr key={deal.id} className="hover:bg-surface transition-colors group">
                       <td className="px-6 py-4">
-                        <div className="font-bold text-[var(--text-primary)] text-base">{deal.clientName}</div>
-                        <div className="text-xs text-[var(--text-secondary)] font-medium mt-0.5 group-hover:text-[var(--text-primary)] transition-colors">ID: #{deal.id}</div>
+                        <div className="font-bold text-text-primary text-base">{deal.clientName}</div>
+                        <div className="text-xs text-text-secondary font-medium mt-0.5 group-hover:text-text-primary transition-colors">ID: #{deal.id}</div>
                       </td>
-                      <td className="px-6 py-4 text-[var(--text-primary)] font-bold font-mono">
+                      <td className="px-6 py-4 text-text-primary font-bold font-mono">
                         R$ {deal.value.toLocaleString('pt-BR')}
                       </td>
                       {isAdmin && (
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-2">
-                            <div className="w-6 h-6 rounded-full bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 flex items-center justify-center text-xs font-bold border border-cyan-200 dark:border-cyan-800">
+                            <div className="w-6 h-6 rounded-full bg-info/20 text-info flex items-center justify-center text-xs font-bold border border-info/30">
                               {getUserName(deal.userId).charAt(0)}
                             </div>
-                            <span className="text-sm font-medium text-[var(--text-secondary)]">{getUserName(deal.userId)}</span>
+                            <span className="text-sm font-medium text-text-secondary">{getUserName(deal.userId)}</span>
                           </div>
                         </td>
                       )}
@@ -241,7 +241,7 @@ const Pipeline: React.FC = () => {
                         {deal.isRescue ? (
                           <Badge color="error" size="sm" withDot>Sim</Badge>
                         ) : (
-                          <span className="text-xs text-[var(--text-secondary)] font-medium">Não</span>
+                          <Badge color="neutral" size="sm">Não</Badge>
                         )}
                       </td>
                       <td className="px-6 py-4 text-right">
@@ -258,7 +258,7 @@ const Pipeline: React.FC = () => {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan={isAdmin ? 6 : 5} className="px-6 py-16 text-center text-[var(--text-secondary)] font-medium">
+                    <td colSpan={isAdmin ? 6 : 5} className="px-6 py-16 text-center text-text-secondary font-medium">
                       Nenhum orçamento encontrado.
                     </td>
                   </tr>
@@ -309,16 +309,16 @@ const Pipeline: React.FC = () => {
             onChange={val => setFormData({ ...formData, status: val as DealStatus })}
           />
 
-          <Card padding="sm" className="space-y-3 bg-[var(--surface-elevated)] border-[var(--border)]">
+          <Card padding="sm" className="space-y-3 bg-surface-elevated border-border">
             <div className="flex items-center">
               <input
                 type="checkbox"
                 id="isInactive"
                 checked={formData.isInactive}
                 onChange={e => setFormData({ ...formData, isInactive: e.target.checked })}
-                className="w-4 h-4 text-cyan-600 rounded border-[var(--border)] focus:ring-cyan-500 bg-[var(--surface)]"
+                className="w-4 h-4 text-info rounded border-border focus:ring-info bg-surface"
               />
-              <label htmlFor="isInactive" className="ml-2 text-sm font-medium text-[var(--text-primary)]">
+              <label htmlFor="isInactive" className="ml-2 text-sm font-medium text-text-primary">
                 Cliente inativo? (Sim/Não)
               </label>
             </div>
@@ -329,9 +329,9 @@ const Pipeline: React.FC = () => {
                 id="isRescue"
                 checked={formData.isRescue}
                 onChange={e => setFormData({ ...formData, isRescue: e.target.checked })}
-                className="w-4 h-4 text-red-600 rounded border-[var(--border)] focus:ring-red-500 bg-[var(--surface)]"
+                className="w-4 h-4 text-error rounded border-border focus:ring-error bg-surface"
               />
-              <label htmlFor="isRescue" className="ml-2 text-sm font-bold text-red-700 dark:text-red-400">
+              <label htmlFor="isRescue" className="ml-2 text-sm font-bold text-error">
                 Inativo resgatado? (Sim/Não)
               </label>
             </div>

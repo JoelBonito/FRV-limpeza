@@ -30,11 +30,11 @@ export function Button({
     )
 
     const variants = {
-        primary: 'bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)] focus:ring-[var(--border-focus)]',
-        secondary: 'bg-[var(--surface-elevated)] text-[var(--text-primary)] border border-[var(--border)] hover:bg-[var(--surface)]',
-        outline: 'bg-transparent text-[var(--primary)] border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-white',
-        ghost: 'bg-transparent text-[var(--text-secondary)] hover:bg-[var(--surface-elevated)] hover:text-[var(--text-primary)]',
-        destructive: 'bg-[var(--error)] text-white hover:opacity-90 focus:ring-[var(--error)]'
+        primary: 'bg-primary text-white hover:bg-primary-hover focus:ring-border-focus',
+        secondary: 'bg-surface-elevated text-text-primary border border-border hover:bg-surface',
+        outline: 'bg-transparent text-primary border border-primary hover:bg-primary hover:text-white',
+        ghost: 'bg-transparent text-text-secondary hover:bg-surface-elevated hover:text-text-primary',
+        destructive: 'bg-error text-white hover:opacity-90 focus:ring-error'
     }
 
     const sizes = {

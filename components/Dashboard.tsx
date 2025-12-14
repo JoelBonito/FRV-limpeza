@@ -6,17 +6,17 @@ import { DollarSign, Target, TrendingUp, Users, ArrowUpRight, ShieldCheck } from
 import { Card } from '@/design-system';
 
 const kpiColors = {
-  emerald: { bg: 'bg-emerald-500', text: 'text-emerald-600', light: 'bg-emerald-100', gradient: 'from-emerald-400 to-emerald-600' },
-  blue: { bg: 'bg-blue-500', text: 'text-blue-600', light: 'bg-blue-100', gradient: 'from-blue-400 to-blue-600' },
-  amber: { bg: 'bg-amber-500', text: 'text-amber-600', light: 'bg-amber-100', gradient: 'from-amber-400 to-amber-500' },
-  cyan: { bg: 'bg-cyan-500', text: 'text-cyan-600', light: 'bg-cyan-100', gradient: 'from-cyan-400 to-teal-500' },
+  emerald: { bg: 'bg-chart-1', text: 'text-chart-1', light: 'bg-chart-1/20', gradient: 'from-chart-1 to-chart-1' },
+  blue: { bg: 'bg-chart-2', text: 'text-chart-2', light: 'bg-chart-2/20', gradient: 'from-chart-2 to-chart-2' },
+  amber: { bg: 'bg-chart-3', text: 'text-chart-3', light: 'bg-chart-3/20', gradient: 'from-chart-3 to-chart-3' },
+  cyan: { bg: 'bg-chart-4', text: 'text-chart-4', light: 'bg-chart-4/20', gradient: 'from-chart-4 to-chart-4' },
 };
 
 const KPICard = ({ title, value, subtext, icon: Icon, colorKey, trend }: any) => {
   const colors = kpiColors[colorKey as keyof typeof kpiColors] || kpiColors.blue;
 
   return (
-    <Card elevated className="flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 border-[var(--border)] bg-[var(--surface)]">
+    <Card elevated className="flex flex-col justify-between relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 border-border bg-surface">
       {/* Soft glow behind */}
       <div className={`absolute -right-6 -top-6 w-24 h-24 bg-gradient-to-br ${colors.gradient} opacity-10 rounded-full blur-xl group-hover:opacity-20 transition-opacity`}></div>
 
@@ -33,9 +33,9 @@ const KPICard = ({ title, value, subtext, icon: Icon, colorKey, trend }: any) =>
       </div>
 
       <div className="mt-6 z-10">
-        <h3 className="text-3xl font-bold text-[var(--text-primary)] tracking-tight">{value}</h3>
-        <p className="text-sm font-medium text-[var(--text-secondary)] mt-1">{title}</p>
-        <p className="text-xs text-[var(--text-secondary)] mt-2 font-medium opacity-70">{subtext}</p>
+        <h3 className="text-3xl font-bold text-text-primary tracking-tight">{value}</h3>
+        <p className="text-sm font-medium text-text-secondary mt-1">{title}</p>
+        <p className="text-xs text-text-secondary mt-2 font-medium opacity-70">{subtext}</p>
       </div>
     </Card>
   );
@@ -78,17 +78,17 @@ const Dashboard: React.FC = () => {
     <div className="space-y-8 animate-in fade-in duration-700">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
-          <h1 className="text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">Resumo (Meta)</h1>
-          <p className="text-[var(--text-secondary)] font-medium mt-1 flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-500" />
+          <h1 className="text-4xl font-extrabold text-text-primary tracking-tight">Resumo (Meta)</h1>
+          <p className="text-text-secondary font-medium mt-1 flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-chart-1" />
             Visão consolidada da Planilha Resumo
           </p>
         </div>
 
-        <Card padding="sm" className="flex items-center gap-3 bg-[var(--surface-elevated)] rounded-full px-5 border border-[var(--border)]">
+        <Card padding="sm" className="flex items-center gap-3 bg-surface-elevated rounded-full px-5 border border-border">
           <div className="flex flex-col items-end">
-            <span className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider">% da meta</span>
-            <span className="text-lg font-bold text-cyan-600">{percentAchieved}%</span>
+            <span className="text-xs font-bold text-text-secondary uppercase tracking-wider">% da meta</span>
+            <span className="text-lg font-bold text-chart-4">{percentAchieved}%</span>
           </div>
           <div className="w-12 h-12 relative">
             <svg className="w-full h-full transform -rotate-90">

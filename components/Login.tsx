@@ -24,13 +24,13 @@ const Login: React.FC = () => {
 
   return (
     <AuthLayout>
-      <Card elevated className="w-full bg-[var(--surface-elevated)] border-[var(--border)]">
+      <Card elevated className="w-full bg-surface-elevated border-border">
         <div className="text-center mb-8">
           <div className="w-12 h-12 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-cyan-500/30 mx-auto mb-4">
             TL
           </div>
-          <h1 className="text-2xl font-bold text-[var(--text-primary)] tracking-tight">TopLimp SalesHub</h1>
-          <p className="text-[var(--text-secondary)] font-medium mt-1 text-sm">Acesse sua conta para continuar</p>
+          <h1 className="text-2xl font-bold text-text-primary tracking-tight">TopLimp SalesHub</h1>
+          <p className="text-text-secondary font-medium mt-1 text-sm">Acesse sua conta para continuar</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
@@ -55,8 +55,8 @@ const Login: React.FC = () => {
         </form>
 
         {/* Demo Credentials Section */}
-        <div className="mt-8 pt-6 border-t border-[var(--border)]">
-          <p className="text-center text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest mb-4">
+        <div className="mt-8 pt-6 border-t border-border">
+          <p className="text-center text-xs font-bold text-text-secondary uppercase tracking-widest mb-4">
             Contas de Demonstração
           </p>
 
@@ -86,10 +86,10 @@ const Login: React.FC = () => {
                 <button
                   key={u.id}
                   onClick={() => setEmail(u.email)}
-                  className="flex flex-col items-center justify-center p-2 rounded-lg bg-[var(--surface)] hover:bg-[var(--surface-elevated)] border border-[var(--border)] transition-all text-center gap-1.5 group"
+                  className="flex flex-col items-center justify-center p-2 rounded-lg bg-surface hover:bg-surface-elevated border border-border transition-all text-center gap-1.5 group"
                 >
                   <img src={u.avatar} className="w-8 h-8 rounded-full opacity-80 group-hover:opacity-100 transition-opacity" />
-                  <p className="text-[10px] font-medium text-[var(--text-secondary)] active:text-[var(--text-primary)] truncate w-full">{u.name.split(' ')[0]}</p>
+                  <p className="text-[10px] font-medium text-text-secondary active:text-text-primary truncate w-full">{u.name.split(' ')[0]}</p>
                 </button>
               ))}
             </div>

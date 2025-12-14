@@ -25,8 +25,8 @@ export function Card({
     return (
         <div
             className={cn(
-                'rounded-xl border border-[var(--border)]',
-                'bg-[var(--surface)]',
+                'rounded-xl border border-border',
+                'bg-surface',
                 elevated ? 'shadow-lg' : 'shadow-sm',
                 paddingStyles[padding],
                 onClick && 'cursor-pointer hover:shadow-md transition-shadow',

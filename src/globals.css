@@ -8,12 +8,26 @@
   --success: #10b981;
   --error: #ef4444;
   --warning: #f59e0b;
+  --info: #06b6d4;
+  
+  /* Surface */
   --surface: #ffffff;
   --surface-elevated: #f6f6f8;
+  
+  /* Text */
   --text-primary: #111118;
   --text-secondary: #616189;
+  
+  /* Border */
   --border: #dbdbe6;
   --border-focus: #2b2bee;
+
+  /* Data Visualization & Branding */
+  --chart-1: #10b981; /* Emerald */
+  --chart-2: #3b82f6; /* Blue */
+  --chart-3: #f59e0b; /* Amber */
+  --chart-4: #06b6d4; /* Cyan */
+  --chart-5: #8b5cf6; /* Violet */
 }
 
 .dark {
@@ -21,10 +35,25 @@
   --primary-hover: #6666ff;
   --success: #34d399;
   --error: #f87171;
+  --warning: #fbbf24;
+  --info: #22d3ee;
+
+  /* Surface */
   --surface: #1c1c27;
   --surface-elevated: #252538;
+  
+  /* Text */
   --text-primary: #f9fafb;
   --text-secondary: #94a3b8;
+  
+  /* Border */
   --border: #334155;
   --border-focus: #4d4dff;
+
+  /* Data Visualization & Branding */
+  --chart-1: #34d399; /* Emerald Light */
+  --chart-2: #60a5fa; /* Blue Light */
+  --chart-3: #fbbf24; /* Amber Light */
+  --chart-4: #22d3ee; /* Cyan Light */
+  --chart-5: #a78bfa; /* Violet Light */
 }
